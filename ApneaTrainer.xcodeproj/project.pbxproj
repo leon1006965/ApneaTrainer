@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21BA483269654AC9970D3E4E /* ApneaTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD69E64C7224CEBA0877DED /* ApneaTrainerApp.swift */; };
+		A0620A7DCA064CCEA38E8472 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A10C285ED8451D8C0179DB /* ContentView.swift */; };
+		F9902682D9484F0F98017472 /* Models/TrainingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70837065D94D87AB8B7C23 /* Models/TrainingTable.swift */; };
+		7BB166472E834EA2ACF4435D /* Models/TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03B8B7388F45D6AAF7824D /* Models/TimerManager.swift */; };
+		082D2F60E6FF478486A898F8 /* Views/HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21D8DB14C5435CB6C222CA /* Views/HomeView.swift */; };
+		520C082A180F44E49EBE5F28 /* Views/TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD11FFE26E4724A8A95EA5 /* Views/TablesView.swift */; };
+		AA51923F8A3F4F8993C444F8 /* Views/CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E95AF2C936D43DD92C5DCD0 /* Views/CustomTableView.swift */; };
+		397AC79E658E4A75956BFEB3 /* Views/TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473CAD5164CF4BF88F1B0D4B /* Views/TimerView.swift */; };
+		221D214C7C994EDFAE23F637 /* Views/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82936726F3954CFFA2C95093 /* Views/SettingsView.swift */; };
+		4CD5A7EA952943B19E0F0732 /* en.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACEDB6C55455487DB476D227 /* en.lproj/Localizable.strings */; };
+		168351E7B8594126B41E1825 /* pl.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 749C8F55B5264C409A28E1FA /* pl.lproj/Localizable.strings */; };
+		C797592938294E74869A3408 /* sv.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C42F6C0CAD74D9F9010F157 /* sv.lproj/Localizable.strings */; };
+		B11D1185DF774BF7AE29933D /* ru.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C757ADE7CA4C41EC82A3E739 /* ru.lproj/Localizable.strings */; };
+		14C52DD623984F9496698EE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F01D58C85C7C4142821F3B0E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDFC416A87BB4211B1648F79 /* ApneaTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApneaTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDD69E64C7224CEBA0877DED /* ApneaTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApneaTrainerApp.swift; sourceTree = "<group>"; };
+		D2A10C285ED8451D8C0179DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD70837065D94D87AB8B7C23 /* TrainingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTable.swift; sourceTree = "<group>"; };
+		4D03B8B7388F45D6AAF7824D /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		3B21D8DB14C5435CB6C222CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		74DD11FFE26E4724A8A95EA5 /* TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
+		6E95AF2C936D43DD92C5DCD0 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		473CAD5164CF4BF88F1B0D4B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		82936726F3954CFFA2C95093 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ACEDB6C55455487DB476D227 /* en.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		749C8F55B5264C409A28E1FA /* pl.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C42F6C0CAD74D9F9010F157 /* sv.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C757ADE7CA4C41EC82A3E739 /* ru.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F01D58C85C7C4142821F3B0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		419445D1AC9F4E478D68BA40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9547EE5DF50E4525873FE2C3 = {
+			isa = PBXGroup;
+			children = (
+				AF6F1DB99F21455B990FE9D7 /* ApneaTrainer */,
+				5EEA025EC6214784A1E318E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF6F1DB99F21455B990FE9D7 /* ApneaTrainer */ = {
+			isa = PBXGroup;
+			children = (
+				BDD69E64C7224CEBA0877DED /* ApneaTrainerApp.swift */,
+				D2A10C285ED8451D8C0179DB /* ContentView.swift */,
+				AD70837065D94D87AB8B7C23 /* TrainingTable.swift */,
+				4D03B8B7388F45D6AAF7824D /* TimerManager.swift */,
+				3B21D8DB14C5435CB6C222CA /* HomeView.swift */,
+				74DD11FFE26E4724A8A95EA5 /* TablesView.swift */,
+				6E95AF2C936D43DD92C5DCD0 /* CustomTableView.swift */,
+				473CAD5164CF4BF88F1B0D4B /* TimerView.swift */,
+				82936726F3954CFFA2C95093 /* SettingsView.swift */,
+				ACEDB6C55455487DB476D227 /* en.lproj/Localizable.strings */,
+				749C8F55B5264C409A28E1FA /* pl.lproj/Localizable.strings */,
+				6C42F6C0CAD74D9F9010F157 /* sv.lproj/Localizable.strings */,
+				C757ADE7CA4C41EC82A3E739 /* ru.lproj/Localizable.strings */,
+				F01D58C85C7C4142821F3B0E /* Assets.xcassets */,
+			);
+			path = ApneaTrainer;
+			sourceTree = "<group>";
+		};
+		5EEA025EC6214784A1E318E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDFC416A87BB4211B1648F79 /* ApneaTrainer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBA0F7FC69FC4451AA1536B0 /* ApneaTrainer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E41B59545B5F41FEA944B0B0 /* Build configuration list for PBXNativeTarget "ApneaTrainer" */;
+			buildPhases = (
+				9FA4C70B6B8845AF9A57742D /* Sources */,
+				419445D1AC9F4E478D68BA40 /* Frameworks */,
+				D7234A73D8894465BA24A035 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApneaTrainer;
+			productName = ApneaTrainer;
+			productReference = CDFC416A87BB4211B1648F79 /* ApneaTrainer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BD685FA1CCF4DEA89146B9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = ECF69A0791EC484184CFB363 /* Build configuration list for PBXProject "ApneaTrainer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				pl,
+				sv,
+				ru,
+			);
+			mainGroup = 9547EE5DF50E4525873FE2C3;
+			productRefGroup = 5EEA025EC6214784A1E318E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBA0F7FC69FC4451AA1536B0 /* ApneaTrainer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7234A73D8894465BA24A035 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD5A7EA952943B19E0F0732 /* en.lproj/Localizable.strings in Resources */,
+				168351E7B8594126B41E1825 /* pl.lproj/Localizable.strings in Resources */,
+				C797592938294E74869A3408 /* sv.lproj/Localizable.strings in Resources */,
+				B11D1185DF774BF7AE29933D /* ru.lproj/Localizable.strings in Resources */,
+				14C52DD623984F9496698EE5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FA4C70B6B8845AF9A57742D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21BA483269654AC9970D3E4E /* ApneaTrainerApp.swift in Sources */,
+				A0620A7DCA064CCEA38E8472 /* ContentView.swift in Sources */,
+				F9902682D9484F0F98017472 /* Models/TrainingTable.swift in Sources */,
+				7BB166472E834EA2ACF4435D /* Models/TimerManager.swift in Sources */,
+				082D2F60E6FF478486A898F8 /* Views/HomeView.swift in Sources */,
+				520C082A180F44E49EBE5F28 /* Views/TablesView.swift in Sources */,
+				AA51923F8A3F4F8993C444F8 /* Views/CustomTableView.swift in Sources */,
+				397AC79E658E4A75956BFEB3 /* Views/TimerView.swift in Sources */,
+				221D214C7C994EDFAE23F637 /* Views/SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9F1547527D0F455BBC25F8FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)",);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		348A02109AA242BE97F6CDD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC14B8B174FF412FB3AFC39C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_KEY_CFBundleDisplayName = "Apnea Trainer";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apneatrainer.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8F38CD3E87464816AD72A50D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_KEY_CFBundleDisplayName = "Apnea Trainer";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",);
+				PRODUCT_BUNDLE_IDENTIFIER = com.apneatrainer.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECF69A0791EC484184CFB363 /* Build configuration list for PBXProject "ApneaTrainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1547527D0F455BBC25F8FD /* Debug */,
+				348A02109AA242BE97F6CDD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E41B59545B5F41FEA944B0B0 /* Build configuration list for PBXNativeTarget "ApneaTrainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC14B8B174FF412FB3AFC39C /* Debug */,
+				8F38CD3E87464816AD72A50D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 5BD685FA1CCF4DEA89146B9B /* Project object */;
+}
