@@ -18,7 +18,7 @@ struct HomeView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Apnea Trainer")
+            .navigationTitle(NSLocalizedString("apnea_trainer", comment: ""))
             .sheet(isPresented: $showTimer) {
                 TimerView(timerManager: timerManager, table: selectedTable)
             }
@@ -31,7 +31,7 @@ struct HomeView: View {
                 .font(.system(size: 60))
                 .foregroundColor(.cyan)
 
-            Text("Breathe. Hold. Conquer.")
+            Text(NSLocalizedString("breathe_hold_conquer", comment: ""))
                 .font(.title3)
                 .foregroundColor(.secondary)
         }
@@ -45,22 +45,22 @@ struct HomeView: View {
 
     private var quickStartSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Quick Start")
+            Text(NSLocalizedString("quick_start", comment: ""))
                 .font(.title2.bold())
 
             NavigationLink(destination: TablesView()) {
-                quickStartCard(title: "Training Tables", subtitle: "O2, CO2, Mix & First Contraction", icon: "list.bullet.rectangle", color: .blue)
+                quickStartCard(title: NSLocalizedString("training_tables", comment: ""), subtitle: "O2, CO2, Mix & First Contraction", icon: "list.bullet.rectangle", color: .blue)
             }
 
             NavigationLink(destination: CustomTableView()) {
-                quickStartCard(title: "Custom Table", subtitle: "Build your own training", icon: "slider.horizontal.3", color: .green)
+                quickStartCard(title: NSLocalizedString("custom", comment: ""), subtitle: NSLocalizedString("build_your_table", comment: ""), icon: "slider.horizontal.3", color: .green)
             }
         }
     }
 
     private var recentTablesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Preset Tables")
+            Text(NSLocalizedString("preset_tables", comment: ""))
                 .font(.title2.bold())
 
             ForEach(store.tables.prefix(4)) { table in
@@ -112,7 +112,7 @@ struct HomeView: View {
                 Text(table.name)
                     .font(.headline)
                     .foregroundColor(.primary)
-                Text("\(table.rows.count) levels")
+                Text("\(table.rows.count) \(NSLocalizedString("levels", comment: ""))")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }

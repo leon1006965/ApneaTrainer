@@ -5,19 +5,19 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label(NSLocalizedString("home", comment: ""), systemImage: "house.fill")
                 }
             TablesView()
                 .tabItem {
-                    Label("Tables", systemImage: "list.bullet.rectangle")
+                    Label(NSLocalizedString("tables", comment: ""), systemImage: "list.bullet.rectangle")
                 }
             CustomTableView()
                 .tabItem {
-                    Label("Custom", systemImage: "slider.horizontal.3")
+                    Label(NSLocalizedString("custom", comment: ""), systemImage: "slider.horizontal.3")
                 }
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape.fill")
+                    Label(NSLocalizedString("settings", comment: ""), systemImage: "gearshape.fill")
                 }
         }
         .accentColor(.cyan)

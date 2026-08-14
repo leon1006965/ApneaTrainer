@@ -28,6 +28,7 @@ struct TimerView: View {
         }
         .navigationBarHidden(true)
         .onAppear {
+            timerManager.loadSettings()
             if timerManager.phase == .idle, let table = table {
                 timerManager.startTable(table)
             }
@@ -83,7 +84,7 @@ struct TimerView: View {
                 .foregroundColor(.primary)
                 .monospacedDigit()
 
-            Text(secondsText)
+            Text("\(timerManager.timeRemaining) \(NSLocalizedString("seconds", comment: ""))")
                 .font(.title3)
                 .foregroundColor(.secondary)
         }
@@ -96,30 +97,26 @@ struct TimerView: View {
         )
     }
 
-    private var secondsText: String {
-        "\(timerManager.timeRemaining) seconds"
-    }
-
     private var levelInfo: some View {
         VStack(spacing: 8) {
             if let row = timerManager.currentRow {
                 HStack(spacing: 20) {
                     VStack {
-                        Text("Level")
+                        Text(NSLocalizedString("level", comment: ""))
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Text("\(row.level)/\(timerManager.totalLevels)")
                             .font(.title3.bold())
                     }
                     VStack {
-                        Text("Hold")
+                        Text(NSLocalizedString("hold", comment: ""))
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Text(formatTime(row.holdSeconds))
                             .font(.title3.bold())
                     }
                     VStack {
-                        Text("Rest")
+                        Text(NSLocalizedString("rest_label", comment: ""))
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Text(formatTime(row.restSeconds))
@@ -146,7 +143,7 @@ struct TimerView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "stop.fill")
                             .font(.title2)
-                        Text("Stop")
+                        Text(NSLocalizedString("stop", comment: ""))
                             .font(.caption)
                     }
                     .foregroundColor(.red)
@@ -165,7 +162,7 @@ struct TimerView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "arrow.counterclockwise")
                             .font(.title2)
-                        Text("Restart")
+                        Text(NSLocalizedString("restart", comment: ""))
                             .font(.caption)
                     }
                     .foregroundColor(.cyan)
@@ -184,7 +181,7 @@ struct TimerView: View {
                 VStack(spacing: 8) {
                     Image(systemName: "house.fill")
                         .font(.title2)
-                    Text("Home")
+                    Text(NSLocalizedString("home", comment: ""))
                         .font(.caption)
                 }
                 .foregroundColor(.blue)
@@ -199,11 +196,11 @@ struct TimerView: View {
 
     private var phaseText: String {
         switch timerManager.phase {
-        case .idle: return "Ready"
-        case .countdown: return "Get Ready"
-        case .holding: return "Hold Your Breath"
-        case .resting: return "Rest"
-        case .finished: return "Completed!"
+        case .idle: return NSLocalizedString("ready", comment: "")
+        case .countdown: return NSLocalizedString("get_ready", comment: "")
+        case .holding: return NSLocalizedString("hold_your_breath", comment: "")
+        case .resting: return NSLocalizedString("rest", comment: "")
+        case .finished: return NSLocalizedString("completed", comment: "")
         }
     }
 

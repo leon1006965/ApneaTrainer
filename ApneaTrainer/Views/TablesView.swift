@@ -29,7 +29,7 @@ struct TablesView: View {
                 }
                 .listStyle(.plain)
             }
-            .navigationTitle("Tables")
+            .navigationTitle(NSLocalizedString("tables", comment: ""))
             .sheet(isPresented: $showTimer) {
                 TimerView(timerManager: timerManager, table: selectedTable)
             }
@@ -69,7 +69,7 @@ struct TablesView: View {
                     .foregroundColor(.primary)
 
                 HStack(spacing: 12) {
-                    Label("\(table.rows.count) levels", systemImage: "number")
+                    Label("\(table.rows.count) \(NSLocalizedString("levels", comment: ""))", systemImage: "number")
                     Label(formatTime(table.rows.first?.holdSeconds ?? 0), systemImage: "timer")
                 }
                 .font(.caption)

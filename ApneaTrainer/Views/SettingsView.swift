@@ -7,9 +7,9 @@ struct SettingsView: View {
 
     let languages = [
         ("en", "English", "🇺🇸"),
-        ("pl", "Polish", "🇵🇱"),
-        ("sv", "Swedish", "🇸🇪"),
-        ("ru", "Russian", "🇷🇺"),
+        ("pl", "Polski", "🇵🇱"),
+        ("sv", "Svenska", "🇸🇪"),
+        ("ru", "Русский", "🇷🇺"),
     ]
 
     let intervals = [5, 10, 15, 20, 30]
@@ -22,7 +22,7 @@ struct SettingsView: View {
                 announcementSection
                 aboutSection
             }
-            .navigationTitle("Settings")
+            .navigationTitle(NSLocalizedString("settings", comment: ""))
         }
     }
 
@@ -44,9 +44,9 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text("App Language")
+            Text(NSLocalizedString("app_language", comment: ""))
         } footer: {
-            Text("Changes the app interface language")
+            Text(NSLocalizedString("changes_language", comment: ""))
         }
     }
 
@@ -56,7 +56,7 @@ struct SettingsView: View {
                 voiceGender = "female"
             } label: {
                 HStack {
-                    Label("Female Voice", systemImage: "person.fill")
+                    Label(NSLocalizedString("female_voice", comment: ""), systemImage: "person.fill")
                         .foregroundColor(.primary)
                     Spacer()
                     if voiceGender == "female" {
@@ -70,7 +70,7 @@ struct SettingsView: View {
                 voiceGender = "male"
             } label: {
                 HStack {
-                    Label("Male Voice", systemImage: "person.fill")
+                    Label(NSLocalizedString("male_voice", comment: ""), systemImage: "person.fill")
                         .foregroundColor(.primary)
                     Spacer()
                     if voiceGender == "male" {
@@ -80,9 +80,9 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text("Countdown Voice")
+            Text(NSLocalizedString("countdown_voice", comment: ""))
         } footer: {
-            Text("Voice used for time announcements during training")
+            Text(NSLocalizedString("voice_used_for_time_announcements", comment: ""))
         }
     }
 
@@ -93,7 +93,7 @@ struct SettingsView: View {
                     announcementInterval = interval
                 } label: {
                     HStack {
-                        Text("Every \(interval) seconds")
+                        Text("\(NSLocalizedString("every", comment: "")) \(interval) \(NSLocalizedString("seconds", comment: ""))")
                             .foregroundColor(.primary)
                         Spacer()
                         if announcementInterval == interval {
@@ -104,27 +104,27 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text("Announcement Interval")
+            Text(NSLocalizedString("announcement_interval", comment: ""))
         } footer: {
-            Text("How often the voice announces remaining time (e.g., every 10 seconds: 30s, 20s, 10s)")
+            Text(NSLocalizedString("how_often_voice_announces", comment: ""))
         }
     }
 
     private var aboutSection: some View {
         Section {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Apnea Trainer")
+                Text(NSLocalizedString("apnea_trainer", comment: ""))
                     .font(.headline)
-                Text("A freediving breath-hold training app")
+                Text(NSLocalizedString("freediving_breath_hold_training", comment: ""))
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Text("Version 1.0")
+                Text("\(NSLocalizedString("version", comment: "")) 1.0")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
             .padding(.vertical, 8)
         } header: {
-            Text("About")
+            Text(NSLocalizedString("about", comment: ""))
         }
     }
 }

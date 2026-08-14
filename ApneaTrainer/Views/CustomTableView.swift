@@ -22,32 +22,32 @@ struct CustomTableView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Custom Table")
+            .navigationTitle(NSLocalizedString("custom", comment: ""))
             .sheet(isPresented: $showTimer) {
                 TimerView(timerManager: timerManager, table: nil)
             }
-            .alert("Save Table", isPresented: $showSaveAlert) {
-                TextField("Table name", text: $tableName)
-                Button("Save") {
+            .alert(NSLocalizedString("save", comment: ""), isPresented: $showSaveAlert) {
+                TextField(NSLocalizedString("table_name", comment: ""), text: $tableName)
+                Button(NSLocalizedString("save", comment: "")) {
                     saveTable()
                 }
-                Button("Cancel", role: .cancel) {}
+                Button(NSLocalizedString("cancel", comment: ""), role: .cancel) {}
             } message: {
-                Text("Enter a name for your custom table")
+                Text(NSLocalizedString("enter_table_name", comment: ""))
             }
         }
     }
 
     private var customBuilderSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Build Your Table")
+            Text(NSLocalizedString("build_your_table", comment: ""))
                 .font(.title2.bold())
 
             VStack(spacing: 12) {
-                timePicker(label: "Hold Time", minutes: $holdMinutes, seconds: $holdSeconds)
-                timePicker(label: "Rest Time", minutes: $restMinutes, seconds: $restSeconds)
+                timePicker(label: NSLocalizedString("hold_time", comment: ""), minutes: $holdMinutes, seconds: $holdSeconds)
+                timePicker(label: NSLocalizedString("rest_time", comment: ""), minutes: $restMinutes, seconds: $restSeconds)
 
-                Stepper("Levels: \(levels)", value: $levels, in: 1...100)
+                Stepper("\(NSLocalizedString("levels", comment: "")): \(levels)", value: $levels, in: 1...100)
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 12)
@@ -59,7 +59,7 @@ struct CustomTableView: View {
                 Button {
                     showSaveAlert = true
                 } label: {
-                    Label("Save", systemImage: "square.and.arrow.down")
+                    Label(NSLocalizedString("save", comment: ""), systemImage: "square.and.arrow.down")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(
@@ -73,7 +73,7 @@ struct CustomTableView: View {
                 Button {
                     startTraining()
                 } label: {
-                    Label("Start", systemImage: "play.fill")
+                    Label(NSLocalizedString("start", comment: ""), systemImage: "play.fill")
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(
@@ -95,11 +95,11 @@ struct CustomTableView: View {
 
     private var savedTablesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Saved Tables")
+            Text(NSLocalizedString("saved_tables", comment: ""))
                 .font(.title2.bold())
 
             if store.customTables.isEmpty {
-                Text("No saved tables yet")
+                Text(NSLocalizedString("no_saved_tables", comment: ""))
                     .foregroundColor(.secondary)
                     .padding()
             } else {
@@ -159,7 +159,7 @@ struct CustomTableView: View {
                     Text(table.name)
                         .font(.headline)
                         .foregroundColor(.primary)
-                    Text("\(table.rows.count) levels - Hold: \(formatTime(table.rows.first?.holdSeconds ?? 0))")
+                    Text("\(table.rows.count) \(NSLocalizedString("levels", comment: "")) - \(NSLocalizedString("hold", comment: "")): \(formatTime(table.rows.first?.holdSeconds ?? 0))")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -193,7 +193,7 @@ struct CustomTableView: View {
         let holdTotal = holdMinutes * 60 + holdSeconds
         let restTotal = restMinutes * 60 + restSeconds
         let rows = (1...levels).map { TableRow(level: $0, holdSeconds: holdTotal, restSeconds: restTotal) }
-        let table = TrainingTable(type: .custom, name: tableName.isEmpty ? "Custom Table" : tableName, rows: rows)
+        let table = TrainingTable(type: .custom, name: tableName.isEmpty ? NSLocalizedString("custom", comment: "") : tableName, rows: rows)
         store.addCustomTable(table)
     }
 
