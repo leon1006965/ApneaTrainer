@@ -4,6 +4,7 @@ import Combine
 
 enum TimerPhase {
     case idle
+    case ready
     case holding
     case resting
     case finished
@@ -22,6 +23,7 @@ class TimerManager: ObservableObject {
     private var timer: Timer?
     private var lastAnnouncementTime = 0
     private let synthesizer = AVSpeechSynthesizer()
+    private let readyDuration = 5
 
     enum VoiceGender: String, CaseIterable {
         case female = "Female"
@@ -54,7 +56,7 @@ class TimerManager: ObservableObject {
         loadSettings()
         self.table = table
         currentLevel = 0
-        startHold()
+        startReady()
     }
 
     func startCustomTimer(holdSeconds: Int, restSeconds: Int, levels: Int) {
@@ -62,7 +64,20 @@ class TimerManager: ObservableObject {
         let rows = (1...levels).map { TableRow(level: $0, holdSeconds: holdSeconds, restSeconds: restSeconds) }
         self.table = TrainingTable(type: .custom, name: "Custom", rows: rows)
         currentLevel = 0
-        startHold()
+        startReady()
+    }
+
+    private func startReady() {
+        guard currentRow != nil else {
+            finish()
+            return
+        }
+        phase = .ready
+        timeRemaining = readyDuration
+        isPaused = false
+        lastAnnouncementTime = readyDuration
+        speakLocalized("get_ready")
+        startTimer()
     }
 
     private func startHold() {
@@ -111,6 +126,8 @@ class TimerManager: ObservableObject {
 
         if timeRemaining <= 5 {
             speakCountdown(timeRemaining)
+        } else if phase == .ready {
+            // no interval announcements during ready
         } else if shouldAnnounce(timeRemaining) {
             speakTime(timeRemaining, isResting: phase == .resting)
             lastAnnouncementTime = timeRemaining
@@ -123,6 +140,8 @@ class TimerManager: ObservableObject {
 
     private func switchPhase() {
         switch phase {
+        case .ready:
+            startHold()
         case .holding:
             startRest()
         case .resting:
