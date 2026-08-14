@@ -4,7 +4,7 @@ import Combine
 
 enum TimerPhase {
     case idle
-    case countdown
+    case ready
     case holding
     case resting
     case finished
@@ -23,6 +23,7 @@ class TimerManager: ObservableObject {
     private var timer: Timer?
     private var lastAnnouncementTime = 0
     private let synthesizer = AVSpeechSynthesizer()
+    private let readyDuration = 5
 
     enum VoiceGender: String, CaseIterable {
         case female = "Female"
@@ -55,7 +56,7 @@ class TimerManager: ObservableObject {
         loadSettings()
         self.table = table
         currentLevel = 0
-        startLevel()
+        startReadyPhase()
     }
 
     func startCustomTimer(holdSeconds: Int, restSeconds: Int, levels: Int) {
@@ -63,7 +64,23 @@ class TimerManager: ObservableObject {
         let rows = (1...levels).map { TableRow(level: $0, holdSeconds: holdSeconds, restSeconds: restSeconds) }
         self.table = TrainingTable(type: .custom, name: "Custom", rows: rows)
         currentLevel = 0
-        startLevel()
+        startReadyPhase()
+    }
+
+    private func startReadyPhase() {
+        guard currentRow != nil else {
+            finish()
+            return
+        }
+        phase = .ready
+        timeRemaining = readyDuration
+        isPaused = false
+        speakLocalized("relax")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            guard let self = self, self.phase == .ready else { return }
+            self.speakLocalized("get_ready")
+        }
+        startTimer()
     }
 
     private func startLevel() {
@@ -75,7 +92,7 @@ class TimerManager: ObservableObject {
         timeRemaining = row.holdSeconds
         lastAnnouncementTime = timeRemaining
         isPaused = false
-        speakTime(timeRemaining, isResting: false)
+        speakLocalized("start")
         startTimer()
     }
 
@@ -97,9 +114,19 @@ class TimerManager: ObservableObject {
             return
         }
 
-        if shouldAnnounce(timeRemaining) {
-            speakTime(timeRemaining, isResting: phase == .resting)
-            lastAnnouncementTime = timeRemaining
+        if phase == .holding && timeRemaining <= 5 {
+            speakCountdown(timeRemaining)
+        } else if phase == .ready {
+            if timeRemaining <= 3 {
+                speakCountdown(timeRemaining)
+            }
+        } else if phase == .resting {
+            if timeRemaining <= 5 {
+                speakCountdown(timeRemaining)
+            } else if shouldAnnounce(timeRemaining) {
+                speakTime(timeRemaining, isResting: true)
+                lastAnnouncementTime = timeRemaining
+            }
         }
     }
 
@@ -109,6 +136,8 @@ class TimerManager: ObservableObject {
 
     private func switchPhase() {
         switch phase {
+        case .ready:
+            startLevel()
         case .holding:
             guard let row = currentRow else { finish(); return }
             phase = .resting
@@ -120,7 +149,7 @@ class TimerManager: ObservableObject {
             if currentLevel >= currentTable.count {
                 finish()
             } else {
-                startLevel()
+                startReadyPhase()
             }
         default:
             break
@@ -161,15 +190,35 @@ class TimerManager: ObservableObject {
         }
     }
 
-    private func speakTime(_ seconds: Int, isResting: Bool) {
-        let text = localizedTimeString(seconds)
+    private func speak(_ text: String, rate: Float = 0.45, pitch: Float = 1.0, delay: TimeInterval = 0.1) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = voiceForLocale(selectedLanguage)
-        utterance.rate = 0.45
-        utterance.pitchMultiplier = isResting ? 0.9 : 1.0
-        utterance.preUtteranceDelay = 0.1
-        utterance.postUtteranceDelay = 0.3
+        utterance.rate = rate
+        utterance.pitchMultiplier = pitch
+        utterance.preUtteranceDelay = delay
+        utterance.postUtteranceDelay = 0.2
         synthesizer.speak(utterance)
+    }
+
+    private func speakLocalized(_ key: String) {
+        speak(L(key))
+    }
+
+    private func speakCountdown(_ seconds: Int) {
+        let numberWords: [String: [String: String]] = [
+            "en": ["1": "one", "2": "two", "3": "three", "4": "four", "5": "five"],
+            "pl": ["1": "jeden", "2": "dwa", "3": "trzy", "4": "cztery", "5": "pięć"],
+            "sv": ["1": "ett", "2": "två", "3": "tre", "4": "fyra", "5": "fem"],
+            "ru": ["1": "один", "2": "два", "3": "три", "4": "четыре", "5": "пять"],
+        ]
+        let words = numberWords[selectedLanguage] ?? numberWords["en"]!
+        let word = words["\(seconds)"] ?? "\(seconds)"
+        speak(word, rate: 0.5, pitch: 1.0, delay: 0.05)
+    }
+
+    private func speakTime(_ seconds: Int, isResting: Bool) {
+        let text = localizedTimeString(seconds)
+        speak(text, rate: 0.45, pitch: isResting ? 0.9 : 1.0)
     }
 
     private func speakRestStart(_ seconds: Int) {
@@ -184,31 +233,11 @@ class TimerManager: ObservableObject {
         default:
             text = "Rest \(timeString(seconds))"
         }
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = voiceForLocale(selectedLanguage)
-        utterance.rate = 0.45
-        utterance.pitchMultiplier = 0.85
-        utterance.preUtteranceDelay = 0.2
-        synthesizer.speak(utterance)
+        speak(text, rate: 0.45, pitch: 0.85, delay: 0.2)
     }
 
     private func speakFinish() {
-        let text: String
-        switch selectedLanguage {
-        case "pl":
-            text = "Gotowe! Świetna robota!"
-        case "sv":
-            text = "Klart! Bra jobbat!"
-        case "ru":
-            text = "Готово! Отличная работа!"
-        default:
-            text = "Done! Great job!"
-        }
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = voiceForLocale(selectedLanguage)
-        utterance.rate = 0.5
-        utterance.pitchMultiplier = 1.1
-        synthesizer.speak(utterance)
+        speak(L("done_great_job"), rate: 0.5, pitch: 1.1)
     }
 
     private func localizedTimeString(_ seconds: Int) -> String {
@@ -227,7 +256,7 @@ class TimerManager: ObservableObject {
             return "\(secs) sekund\(secs == 1 ? "" : "er")"
         case "ru":
             if mins > 0 {
-                return "\(mins) минут\(secs) секунд"
+                return "\(mins) минут \(secs) секунд"
             }
             return "\(secs) секунд"
         default:
@@ -245,7 +274,6 @@ class TimerManager: ObservableObject {
             "sv": ["sv-SE"],
             "ru": ["ru-RU"],
         ]
-
         let locales = localeMap[locale] ?? ["en-US"]
         for loc in locales {
             if let voice = AVSpeechSynthesisVoice.speechVoices().first(where: {

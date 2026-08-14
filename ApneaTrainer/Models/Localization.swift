@@ -48,6 +48,8 @@ class LocalizationManager {
             "level": "Level",
             "hold": "Hold",
             "seconds": "seconds",
+            "relax": "Relax",
+            "done_great_job": "Done! Great job!",
         ],
         "pl": [
             "home": "Dom",
@@ -93,6 +95,8 @@ class LocalizationManager {
             "level": "Poziom",
             "hold": "Wstrzymanie",
             "seconds": "sekund",
+            "relax": "Zrelaksuj się",
+            "done_great_job": "Gotowe! Świetna robota!",
         ],
         "sv": [
             "home": "Hem",
@@ -138,6 +142,8 @@ class LocalizationManager {
             "level": "Nivå",
             "hold": "Håll",
             "seconds": "sekunder",
+            "relax": "Slappna av",
+            "done_great_job": "Klart! Bra jobbat!",
         ],
         "ru": [
             "home": "Главная",
@@ -183,6 +189,8 @@ class LocalizationManager {
             "level": "Уровень",
             "hold": "Задержка",
             "seconds": "секунд",
+            "relax": "Расслабьтесь",
+            "done_great_job": "Готово! Отличная работа!",
         ],
     ]
 
