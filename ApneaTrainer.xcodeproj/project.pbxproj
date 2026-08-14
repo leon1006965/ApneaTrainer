@@ -7,46 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5239CA9A0B934F30AD80F91A /* ApneaTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FEF8DD56C44EEB9BC8596 /* ApneaTrainerApp.swift */; };
-		7DB54D2D8C484F48AB9585A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73EBD98D9264F4BB78665C9 /* ContentView.swift */; };
-		2C7A891A54EB44FDBC6905C7 /* Models/TrainingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0412A0E9F74302A81C677B /* Models/TrainingTable.swift */; };
-		725AE6320C1E43B9B244F070 /* Models/TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B810B79BD84CC98A0CC5D6 /* Models/TimerManager.swift */; };
-		BE99447FE76F40F5B8B73C4A /* Views/HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABC86C8C22478F941209BC /* Views/HomeView.swift */; };
-		B3BED018FD4B497B81FDF8F0 /* Views/TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD010FC939904872AF64B5B0 /* Views/TablesView.swift */; };
-		7D32114DEC224970B5F6D5F2 /* Views/CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576F1906E234E86A2D33097 /* Views/CustomTableView.swift */; };
-		C676D9952F0E45309D646D7E /* Views/TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BDFB85DBF43C486BF9E69 /* Views/TimerView.swift */; };
-		039A43F3A5444E6EA17CB579 /* Views/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF9FAE5CEA40FA89AE8BB8 /* Views/SettingsView.swift */; };
-		FAD5C40F6B87472EA50203C5 /* en.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA166D69C658425EA45C8093 /* en.lproj/Localizable.strings */; };
-		28162B6ED8D4417FA560DD07 /* pl.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9157971B12C844E0A0355DB4 /* pl.lproj/Localizable.strings */; };
-		B47A1FA23A544D408D0D8032 /* sv.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63DF5290ED4F4F38AAB337F1 /* sv.lproj/Localizable.strings */; };
-		F2B1D22763BE4D95A937A2C9 /* ru.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C044C01750574F7C9D3D2B5E /* ru.lproj/Localizable.strings */; };
-		65FD4C31CEBE40A19306581C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221797A5D819456595BC1ABA /* Assets.xcassets */; };
-		3D806603122C416E8449E59E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB940322FBD4D17AADB3663 /* Info.plist */; };
-		FFDC3DB593DE49D2B38C4E3A /* Models/Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B09DE44C0EC455794C2ACF7 /* Models/Localization.swift */; };
+		7FD69C1134664873998CA3A3 /* ApneaTrainerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9704AF350A2414D91D6DF7B /* ApneaTrainerApp.swift */; };
+		BABA10A91DD8436981A82C37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E93EBCAD794063B4082726 /* ContentView.swift */; };
+		93230ACE45E44E8896D17744 /* Models/TrainingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E92CDDEDC5845F2ADA84F29 /* Models/TrainingTable.swift */; };
+		86AF4C1AFE47417EB6BDD4BD /* Models/TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80078F5FE1E44F90B46C78BA /* Models/TimerManager.swift */; };
+		72E95BE008EC49968E5DAAEA /* Models/Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C802A28EAA0F4179B7328CF9 /* Models/Localization.swift */; };
+		5F00560199F546879A3480EC /* Views/HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E96932A7742B6BC19C777 /* Views/HomeView.swift */; };
+		CAA49E5E3FF24B0E831ADD3A /* Views/TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35630072E0CF43A7A4B40FA5 /* Views/TablesView.swift */; };
+		8C144FE8F25E4E75A305127D /* Views/CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E35622617D463FB77BF45C /* Views/CustomTableView.swift */; };
+		6E9569F7E5AD41E69B31FC29 /* Views/TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F479DD9E14D54AB8FA490 /* Views/TimerView.swift */; };
+		296E676A6AD0428E8BEF5FF0 /* Views/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ACE6818AD741A194642A75 /* Views/SettingsView.swift */; };
+		783BFEBA40A54724B2798849 /* en.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08EB7E8E09BD4B019E32CC04 /* en.lproj/Localizable.strings */; };
+		151ABEE033A44CAC9F1462FB /* pl.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967D7D4FE4D34E42ACFED44B /* pl.lproj/Localizable.strings */; };
+		3582CB2ABDE74F4C8BB145FA /* sv.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE54BF24DA542EB9B05D678 /* sv.lproj/Localizable.strings */; };
+		F761C30CA5784B21939F0803 /* ru.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BDFEED6A79046F0BAC4F36D /* ru.lproj/Localizable.strings */; };
+		36D0DE9E98954A39A4FEFBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C239B769F6B4D9BBC483311 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		564B8C0DD2464F179D67E39E /* ApneaTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApneaTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE2FEF8DD56C44EEB9BC8596 /* ApneaTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApneaTrainerApp.swift; sourceTree = "<group>"; };
-		C73EBD98D9264F4BB78665C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DB0412A0E9F74302A81C677B /* Models/TrainingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTable.swift; sourceTree = "<group>"; };
-		51B810B79BD84CC98A0CC5D6 /* Models/TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
-		61ABC86C8C22478F941209BC /* Views/HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		CD010FC939904872AF64B5B0 /* Views/TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
-		9576F1906E234E86A2D33097 /* Views/CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
-		550BDFB85DBF43C486BF9E69 /* Views/TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		73EF9FAE5CEA40FA89AE8BB8 /* Views/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		EA166D69C658425EA45C8093 /* en.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9157971B12C844E0A0355DB4 /* pl.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		63DF5290ED4F4F38AAB337F1 /* sv.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C044C01750574F7C9D3D2B5E /* ru.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		221797A5D819456595BC1ABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8AB940322FBD4D17AADB3663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B09DE44C0EC455794C2ACF7 /* Models/Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		2875F2119A884A27BF7CF874 /* ApneaTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApneaTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9704AF350A2414D91D6DF7B /* ApneaTrainerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApneaTrainerApp.swift; sourceTree = "<group>"; };
+		66E93EBCAD794063B4082726 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8E92CDDEDC5845F2ADA84F29 /* Models/TrainingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTable.swift; sourceTree = "<group>"; };
+		80078F5FE1E44F90B46C78BA /* Models/TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		C802A28EAA0F4179B7328CF9 /* Models/Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		687E96932A7742B6BC19C777 /* Views/HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		35630072E0CF43A7A4B40FA5 /* Views/TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
+		14E35622617D463FB77BF45C /* Views/CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		BC9F479DD9E14D54AB8FA490 /* Views/TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		14ACE6818AD741A194642A75 /* Views/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		08EB7E8E09BD4B019E32CC04 /* en.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		967D7D4FE4D34E42ACFED44B /* pl.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAE54BF24DA542EB9B05D678 /* sv.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6BDFEED6A79046F0BAC4F36D /* ru.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C239B769F6B4D9BBC483311 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C3B3C92395C943A89172F9CD /* Frameworks */ = {
+		38EC8A2736B349CE8C4FF1FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,55 +54,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CBEB0A7787594D6396A58444 = {
+		0D17C32CCF8F4E0CA7EAC344 = {
 			isa = PBXGroup;
 			children = (
-				AADEA3A6F48446BA99AA547F /* ApneaTrainer */,
-				D45666A928AD4D5C97D826E8 /* Products */,
+				B4FB5B6E6F8F4DBF9F2CDFE1 /* ApneaTrainer */,
+				E48D6B3E815B42E3A1D2B9C7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AADEA3A6F48446BA99AA547F /* ApneaTrainer */ = {
+		B4FB5B6E6F8F4DBF9F2CDFE1 /* ApneaTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				BE2FEF8DD56C44EEB9BC8596 /* ApneaTrainerApp.swift */,
-				C73EBD98D9264F4BB78665C9 /* ContentView.swift */,
-				579B386B2B454A7296387F5E /* Models */,
-				FF074A8874164793BF7FE527 /* Views */,
-				EA166D69C658425EA45C8093 /* en.lproj/Localizable.strings */,
-				9157971B12C844E0A0355DB4 /* pl.lproj/Localizable.strings */,
-				63DF5290ED4F4F38AAB337F1 /* sv.lproj/Localizable.strings */,
-				C044C01750574F7C9D3D2B5E /* ru.lproj/Localizable.strings */,
-				221797A5D819456595BC1ABA /* Assets.xcassets */,
+				E9704AF350A2414D91D6DF7B /* ApneaTrainerApp.swift */,
+				66E93EBCAD794063B4082726 /* ContentView.swift */,
+				029DF4F257D448E599438B64 /* Models */,
+				1572A30A7E87430E97B59B86 /* Views */,
+				08EB7E8E09BD4B019E32CC04 /* en.lproj/Localizable.strings */,
+				967D7D4FE4D34E42ACFED44B /* pl.lproj/Localizable.strings */,
+				FAE54BF24DA542EB9B05D678 /* sv.lproj/Localizable.strings */,
+				6BDFEED6A79046F0BAC4F36D /* ru.lproj/Localizable.strings */,
+				8C239B769F6B4D9BBC483311 /* Assets.xcassets */,
 			);
 			path = ApneaTrainer;
 			sourceTree = "<group>";
 		};
-		579B386B2B454A7296387F5E /* Models */ = {
+		029DF4F257D448E599438B64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DB0412A0E9F74302A81C677B /* Models/TrainingTable.swift */,
-				51B810B79BD84CC98A0CC5D6 /* Models/TimerManager.swift */,
+				8E92CDDEDC5845F2ADA84F29 /* Models/TrainingTable.swift */,
+				80078F5FE1E44F90B46C78BA /* Models/TimerManager.swift */,
+				C802A28EAA0F4179B7328CF9 /* Models/Localization.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FF074A8874164793BF7FE527 /* Views */ = {
+		1572A30A7E87430E97B59B86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				61ABC86C8C22478F941209BC /* Views/HomeView.swift */,
-				CD010FC939904872AF64B5B0 /* Views/TablesView.swift */,
-				9576F1906E234E86A2D33097 /* Views/CustomTableView.swift */,
-				550BDFB85DBF43C486BF9E69 /* Views/TimerView.swift */,
-				73EF9FAE5CEA40FA89AE8BB8 /* Views/SettingsView.swift */,
+				687E96932A7742B6BC19C777 /* Views/HomeView.swift */,
+				35630072E0CF43A7A4B40FA5 /* Views/TablesView.swift */,
+				14E35622617D463FB77BF45C /* Views/CustomTableView.swift */,
+				BC9F479DD9E14D54AB8FA490 /* Views/TimerView.swift */,
+				14ACE6818AD741A194642A75 /* Views/SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D45666A928AD4D5C97D826E8 /* Products */ = {
+		E48D6B3E815B42E3A1D2B9C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				564B8C0DD2464F179D67E39E /* ApneaTrainer.app */,
+				2875F2119A884A27BF7CF874 /* ApneaTrainer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,13 +111,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E9007CA7E2C4E97AB37D070 /* ApneaTrainer */ = {
+		517DAE59B8A64D7E93158FA6 /* ApneaTrainer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AFD72F0558E14F839A4F6C16 /* Build configuration list for PBXNativeTarget "ApneaTrainer" */;
+			buildConfigurationList = 5E91FFE2C7DE4DF99AAD0CE8;
 			buildPhases = (
-				4C5077F3C469410EBA503750 /* Sources */,
-				C3B3C92395C943A89172F9CD /* Frameworks */,
-				43CAF28A765C444DA9D33CDE /* Resources */,
+				205A1EEF6C114583A545584C /* Sources */,
+				38EC8A2736B349CE8C4FF1FC /* Frameworks */,
+				27A0C814A7944D60BE6FA134 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -126,77 +125,71 @@
 			);
 			name = ApneaTrainer;
 			productName = ApneaTrainer;
-			productReference = 564B8C0DD2464F179D67E39E /* ApneaTrainer.app */;
+			productReference = 2875F2119A884A27BF7CF874 /* ApneaTrainer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9659DB8F44744F5AA5D7A87E /* Project object */ = {
+		8D94AA74C522476A964A3625 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 			};
-			buildConfigurationList = F8D2DE68F6E14B65A6E7F557 /* Build configuration list for PBXProject "ApneaTrainer" */;
+			buildConfigurationList = 757568B277CF4A7F9A4AA7C4;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-				pl,
-				sv,
-				ru,
-			);
-			mainGroup = CBEB0A7787594D6396A58444;
-			productRefGroup = D45666A928AD4D5C97D826E8 /* Products */;
+			knownRegions = (en, Base, pl, sv, ru);
+			mainGroup = 0D17C32CCF8F4E0CA7EAC344;
+			productRefGroup = E48D6B3E815B42E3A1D2B9C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E9007CA7E2C4E97AB37D070 /* ApneaTrainer */,
+				517DAE59B8A64D7E93158FA6 /* ApneaTrainer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		43CAF28A765C444DA9D33CDE /* Resources */ = {
+		27A0C814A7944D60BE6FA134 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD5C40F6B87472EA50203C5 /* en.lproj/Localizable.strings in Resources */,
-				28162B6ED8D4417FA560DD07 /* pl.lproj/Localizable.strings in Resources */,
-				B47A1FA23A544D408D0D8032 /* sv.lproj/Localizable.strings in Resources */,
-				F2B1D22763BE4D95A937A2C9 /* ru.lproj/Localizable.strings in Resources */,
-				65FD4C31CEBE40A19306581C /* Assets.xcassets in Resources */,
+				783BFEBA40A54724B2798849 /* en.lproj/Localizable.strings in Resources */,
+				151ABEE033A44CAC9F1462FB /* pl.lproj/Localizable.strings in Resources */,
+				3582CB2ABDE74F4C8BB145FA /* sv.lproj/Localizable.strings in Resources */,
+				F761C30CA5784B21939F0803 /* ru.lproj/Localizable.strings in Resources */,
+				36D0DE9E98954A39A4FEFBF3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4C5077F3C469410EBA503750 /* Sources */ = {
+		205A1EEF6C114583A545584C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5239CA9A0B934F30AD80F91A /* ApneaTrainerApp.swift in Sources */,
-				7DB54D2D8C484F48AB9585A8 /* ContentView.swift in Sources */,
-				2C7A891A54EB44FDBC6905C7 /* Models/TrainingTable.swift in Sources */,
-				725AE6320C1E43B9B244F070 /* Models/TimerManager.swift in Sources */,
-				BE99447FE76F40F5B8B73C4A /* Views/HomeView.swift in Sources */,
-				B3BED018FD4B497B81FDF8F0 /* Views/TablesView.swift in Sources */,
-				7D32114DEC224970B5F6D5F2 /* Views/CustomTableView.swift in Sources */,
-				C676D9952F0E45309D646D7E /* Views/TimerView.swift in Sources */,
-				039A43F3A5444E6EA17CB579 /* Views/SettingsView.swift in Sources */,
-				FFDC3DB593DE49D2B38C4E3A /* Models/Localization.swift in Sources */,
+				7FD69C1134664873998CA3A3 /* ApneaTrainerApp.swift in Sources */,
+				BABA10A91DD8436981A82C37 /* ContentView.swift in Sources */,
+				93230ACE45E44E8896D17744 /* Models/TrainingTable.swift in Sources */,
+				86AF4C1AFE47417EB6BDD4BD /* Models/TimerManager.swift in Sources */,
+				72E95BE008EC49968E5DAAEA /* Models/Localization.swift in Sources */,
+				5F00560199F546879A3480EC /* Views/HomeView.swift in Sources */,
+				CAA49E5E3FF24B0E831ADD3A /* Views/TablesView.swift in Sources */,
+				8C144FE8F25E4E75A305127D /* Views/CustomTableView.swift in Sources */,
+				6E9569F7E5AD41E69B31FC29 /* Views/TimerView.swift in Sources */,
+				296E676A6AD0428E8BEF5FF0 /* Views/SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4A1B7D18F60F4F5E8D16DC67 /* Debug */ = {
+		6B5203C706C340A0822C1BE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -205,22 +198,22 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = iphoneos;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)",);
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		AFA112C6C0D84D4DAAA57D72 /* Release */ = {
+		D7FD203139DB4CB68AECBC73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,31 +222,30 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		EBB617C8B80946488990A251 /* Debug */ = {
+		D385E0A17C86422EB0E17643 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ApneaTrainer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Apnea Trainer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
 				PRODUCT_BUNDLE_IDENTIFIER = com.apneatrainer.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -263,19 +255,18 @@
 			};
 			name = Debug;
 		};
-		28D200E7039F4424BEFF1EAD /* Release */ = {
+		EF0BDC1908974631BEA32803 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ApneaTrainer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Apnea Trainer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks",);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
 				PRODUCT_BUNDLE_IDENTIFIER = com.apneatrainer.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -288,26 +279,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8D2DE68F6E14B65A6E7F557 /* Build configuration list for PBXProject "ApneaTrainer" */ = {
+		757568B277CF4A7F9A4AA7C4 /* Build configuration list for PBXProject "ApneaTrainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A1B7D18F60F4F5E8D16DC67 /* Debug */,
-				AFA112C6C0D84D4DAAA57D72 /* Release */,
+				6B5203C706C340A0822C1BE6 /* Debug */,
+				D7FD203139DB4CB68AECBC73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AFD72F0558E14F839A4F6C16 /* Build configuration list for PBXNativeTarget "ApneaTrainer" */ = {
+		5E91FFE2C7DE4DF99AAD0CE8 /* Build configuration list for PBXNativeTarget "ApneaTrainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EBB617C8B80946488990A251 /* Debug */,
-				28D200E7039F4424BEFF1EAD /* Release */,
+				D385E0A17C86422EB0E17643 /* Debug */,
+				EF0BDC1908974631BEA32803 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
-	rootObject = 9659DB8F44744F5AA5D7A87E /* Project object */;
+	rootObject = 8D94AA74C522476A964A3625 /* Project object */;
 }
