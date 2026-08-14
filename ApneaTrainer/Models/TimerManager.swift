@@ -4,7 +4,6 @@ import Combine
 
 enum TimerPhase {
     case idle
-    case ready
     case holding
     case resting
     case finished
@@ -23,7 +22,6 @@ class TimerManager: ObservableObject {
     private var timer: Timer?
     private var lastAnnouncementTime = 0
     private let synthesizer = AVSpeechSynthesizer()
-    private let readyDuration = 5
 
     enum VoiceGender: String, CaseIterable {
         case female = "Female"
@@ -56,7 +54,7 @@ class TimerManager: ObservableObject {
         loadSettings()
         self.table = table
         currentLevel = 0
-        startReadyPhase()
+        startHold()
     }
 
     func startCustomTimer(holdSeconds: Int, restSeconds: Int, levels: Int) {
@@ -64,26 +62,10 @@ class TimerManager: ObservableObject {
         let rows = (1...levels).map { TableRow(level: $0, holdSeconds: holdSeconds, restSeconds: restSeconds) }
         self.table = TrainingTable(type: .custom, name: "Custom", rows: rows)
         currentLevel = 0
-        startReadyPhase()
+        startHold()
     }
 
-    private func startReadyPhase() {
-        guard currentRow != nil else {
-            finish()
-            return
-        }
-        phase = .ready
-        timeRemaining = readyDuration
-        isPaused = false
-        speakLocalized("relax")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-            guard let self = self, self.phase == .ready else { return }
-            self.speakLocalized("get_ready")
-        }
-        startTimer()
-    }
-
-    private func startLevel() {
+    private func startHold() {
         guard let row = currentRow else {
             finish()
             return
@@ -93,6 +75,19 @@ class TimerManager: ObservableObject {
         lastAnnouncementTime = timeRemaining
         isPaused = false
         speakLocalized("start")
+        startTimer()
+    }
+
+    private func startRest() {
+        guard let row = currentRow else {
+            finish()
+            return
+        }
+        phase = .resting
+        timeRemaining = row.restSeconds
+        lastAnnouncementTime = timeRemaining
+        speakLocalized("relax")
+        speak(timeString(timeRemaining), rate: 0.45, pitch: 0.85, delay: 1.0)
         startTimer()
     }
 
@@ -114,19 +109,11 @@ class TimerManager: ObservableObject {
             return
         }
 
-        if phase == .holding && timeRemaining <= 5 {
+        if timeRemaining <= 5 {
             speakCountdown(timeRemaining)
-        } else if phase == .ready {
-            if timeRemaining <= 3 {
-                speakCountdown(timeRemaining)
-            }
-        } else if phase == .resting {
-            if timeRemaining <= 5 {
-                speakCountdown(timeRemaining)
-            } else if shouldAnnounce(timeRemaining) {
-                speakTime(timeRemaining, isResting: true)
-                lastAnnouncementTime = timeRemaining
-            }
+        } else if shouldAnnounce(timeRemaining) {
+            speakTime(timeRemaining, isResting: phase == .resting)
+            lastAnnouncementTime = timeRemaining
         }
     }
 
@@ -136,20 +123,14 @@ class TimerManager: ObservableObject {
 
     private func switchPhase() {
         switch phase {
-        case .ready:
-            startLevel()
         case .holding:
-            guard let row = currentRow else { finish(); return }
-            phase = .resting
-            timeRemaining = row.restSeconds
-            lastAnnouncementTime = timeRemaining
-            speakRestStart(row.restSeconds)
+            startRest()
         case .resting:
             currentLevel += 1
             if currentLevel >= currentTable.count {
                 finish()
             } else {
-                startReadyPhase()
+                startHold()
             }
         default:
             break
@@ -213,27 +194,12 @@ class TimerManager: ObservableObject {
         ]
         let words = numberWords[selectedLanguage] ?? numberWords["en"]!
         let word = words["\(seconds)"] ?? "\(seconds)"
-        speak(word, rate: 0.5, pitch: 1.0, delay: 0.05)
+        speak(word, rate: 0.55, pitch: 1.0, delay: 0.05)
     }
 
     private func speakTime(_ seconds: Int, isResting: Bool) {
         let text = localizedTimeString(seconds)
-        speak(text, rate: 0.45, pitch: isResting ? 0.9 : 1.0)
-    }
-
-    private func speakRestStart(_ seconds: Int) {
-        let text: String
-        switch selectedLanguage {
-        case "pl":
-            text = "Odpoczynek \(timeString(seconds))"
-        case "sv":
-            text = "Vila \(timeString(seconds))"
-        case "ru":
-            text = "Отдых \(timeString(seconds))"
-        default:
-            text = "Rest \(timeString(seconds))"
-        }
-        speak(text, rate: 0.45, pitch: 0.85, delay: 0.2)
+        speak(text, rate: 0.45, pitch: isResting ? 0.85 : 1.0)
     }
 
     private func speakFinish() {

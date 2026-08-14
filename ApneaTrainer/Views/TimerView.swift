@@ -179,7 +179,6 @@ struct TimerView: View {
     private var phaseText: String {
         switch timerManager.phase {
         case .idle: return L("ready")
-        case .ready: return L("get_ready")
         case .holding: return L("hold_your_breath")
         case .resting: return L("rest")
         case .finished: return L("completed")
@@ -189,7 +188,6 @@ struct TimerView: View {
     private var phaseColor: Color {
         switch timerManager.phase {
         case .idle: return .gray
-        case .ready: return .orange
         case .holding: return .cyan
         case .resting: return .green
         case .finished: return .purple
@@ -200,7 +198,6 @@ struct TimerView: View {
         switch timerManager.phase {
         case .holding: return .cyan
         case .resting: return .green
-        case .ready: return .orange
         default: return .gray
         }
     }
