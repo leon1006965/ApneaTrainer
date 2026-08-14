@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBA0F7FC69FC4451AA1536B0"
+               BlueprintIdentifier = "2E9007CA7E2C4E97AB37D070"
                BuildableName = "ApneaTrainer.app"
                BlueprintName = "ApneaTrainer"
                ReferencedContainer = "container:ApneaTrainer.xcodeproj">
@@ -43,7 +43,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBA0F7FC69FC4451AA1536B0"
+            BlueprintIdentifier = "2E9007CA7E2C4E97AB37D070"
             BuildableName = "ApneaTrainer.app"
             BlueprintName = "ApneaTrainer"
             ReferencedContainer = "container:ApneaTrainer.xcodeproj">
@@ -60,7 +60,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBA0F7FC69FC4451AA1536B0"
+            BlueprintIdentifier = "2E9007CA7E2C4E97AB37D070"
             BuildableName = "ApneaTrainer.app"
             BlueprintName = "ApneaTrainer"
             ReferencedContainer = "container:ApneaTrainer.xcodeproj">
