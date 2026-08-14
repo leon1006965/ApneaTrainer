@@ -22,6 +22,7 @@
 		3582CB2ABDE74F4C8BB145FA /* sv.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE54BF24DA542EB9B05D678 /* sv.lproj/Localizable.strings */; };
 		F761C30CA5784B21939F0803 /* ru.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BDFEED6A79046F0BAC4F36D /* ru.lproj/Localizable.strings */; };
 		36D0DE9E98954A39A4FEFBF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C239B769F6B4D9BBC483311 /* Assets.xcassets */; };
+		61523B2DF6A94671BD3D3424 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 0D34B33623B74AFE95EE0709 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		FAE54BF24DA542EB9B05D678 /* sv.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6BDFEED6A79046F0BAC4F36D /* ru.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C239B769F6B4D9BBC483311 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D34B33623B74AFE95EE0709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				E9704AF350A2414D91D6DF7B /* ApneaTrainerApp.swift */,
 				66E93EBCAD794063B4082726 /* ContentView.swift */,
+				0D34B33623B74AFE95EE0709 /* Info.plist */,
 				029DF4F257D448E599438B64 /* Models */,
 				1572A30A7E87430E97B59B86 /* Views */,
 				08EB7E8E09BD4B019E32CC04 /* en.lproj/Localizable.strings */,
@@ -183,6 +186,7 @@
 				8C144FE8F25E4E75A305127D /* Views/CustomTableView.swift in Sources */,
 				6E9569F7E5AD41E69B31FC29 /* Views/TimerView.swift in Sources */,
 				296E676A6AD0428E8BEF5FF0 /* Views/SettingsView.swift in Sources */,
+				61523B2DF6A94671BD3D3424 /* Info.plist in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +243,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ApneaTrainer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Apnea Trainer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -260,6 +265,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ApneaTrainer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Apnea Trainer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
