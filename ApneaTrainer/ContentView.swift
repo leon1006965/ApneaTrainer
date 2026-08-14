@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("appLanguage") private var appLanguage = "en"
+
     var body: some View {
         TabView {
             HomeView()
@@ -21,5 +23,6 @@ struct ContentView: View {
                 }
         }
         .accentColor(.cyan)
+        .environment(\.locale, Locale(identifier: appLanguage))
     }
 }
