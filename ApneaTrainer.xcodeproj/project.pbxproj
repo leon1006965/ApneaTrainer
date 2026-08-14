@@ -22,6 +22,7 @@
 		F2B1D22763BE4D95A937A2C9 /* ru.lproj/Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C044C01750574F7C9D3D2B5E /* ru.lproj/Localizable.strings */; };
 		65FD4C31CEBE40A19306581C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221797A5D819456595BC1ABA /* Assets.xcassets */; };
 		3D806603122C416E8449E59E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB940322FBD4D17AADB3663 /* Info.plist */; };
+		FFDC3DB593DE49D2B38C4E3A /* Models/Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B09DE44C0EC455794C2ACF7 /* Models/Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		C044C01750574F7C9D3D2B5E /* ru.lproj/Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		221797A5D819456595BC1ABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AB940322FBD4D17AADB3663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B09DE44C0EC455794C2ACF7 /* Models/Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				7D32114DEC224970B5F6D5F2 /* Views/CustomTableView.swift in Sources */,
 				C676D9952F0E45309D646D7E /* Views/TimerView.swift in Sources */,
 				039A43F3A5444E6EA17CB579 /* Views/SettingsView.swift in Sources */,
+				FFDC3DB593DE49D2B38C4E3A /* Models/Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

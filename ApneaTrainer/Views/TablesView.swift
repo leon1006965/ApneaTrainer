@@ -6,6 +6,7 @@ struct TablesView: View {
     @State private var selectedType: TableType = .o2
     @State private var showTimer = false
     @State private var selectedTable: TrainingTable?
+    @AppStorage("appLanguage") private var appLanguage = "en"
 
     var filteredTables: [TrainingTable] {
         store.tables.filter { $0.type == selectedType }
@@ -15,7 +16,6 @@ struct TablesView: View {
         NavigationView {
             VStack(spacing: 0) {
                 typePicker
-
                 List(filteredTables) { table in
                     Button {
                         selectedTable = table
@@ -29,11 +29,12 @@ struct TablesView: View {
                 }
                 .listStyle(.plain)
             }
-            .navigationTitle(NSLocalizedString("tables", comment: ""))
+            .navigationTitle(L("tables"))
             .sheet(isPresented: $showTimer) {
                 TimerView(timerManager: timerManager, table: selectedTable)
             }
         }
+        .id(appLanguage)
     }
 
     private var typePicker: some View {
@@ -67,17 +68,14 @@ struct TablesView: View {
                 Text(table.name)
                     .font(.headline)
                     .foregroundColor(.primary)
-
                 HStack(spacing: 12) {
-                    Label("\(table.rows.count) \(NSLocalizedString("levels", comment: ""))", systemImage: "number")
+                    Label("\(table.rows.count) \(L("levels"))", systemImage: "number")
                     Label(formatTime(table.rows.first?.holdSeconds ?? 0), systemImage: "timer")
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
             }
-
             Spacer()
-
             Image(systemName: "play.circle.fill")
                 .font(.title2)
                 .foregroundColor(typeColor(table.type))

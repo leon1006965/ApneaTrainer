@@ -22,7 +22,7 @@ struct SettingsView: View {
                 announcementSection
                 aboutSection
             }
-            .navigationTitle(NSLocalizedString("settings", comment: ""))
+            .navigationTitle(L("settings"))
         }
     }
 
@@ -44,9 +44,9 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text(NSLocalizedString("app_language", comment: ""))
+            Text(L("app_language"))
         } footer: {
-            Text(NSLocalizedString("changes_language", comment: ""))
+            Text(L("changes_language"))
         }
     }
 
@@ -56,7 +56,7 @@ struct SettingsView: View {
                 voiceGender = "female"
             } label: {
                 HStack {
-                    Label(NSLocalizedString("female_voice", comment: ""), systemImage: "person.fill")
+                    Label(L("female_voice"), systemImage: "person.fill")
                         .foregroundColor(.primary)
                     Spacer()
                     if voiceGender == "female" {
@@ -65,12 +65,11 @@ struct SettingsView: View {
                     }
                 }
             }
-
             Button {
                 voiceGender = "male"
             } label: {
                 HStack {
-                    Label(NSLocalizedString("male_voice", comment: ""), systemImage: "person.fill")
+                    Label(L("male_voice"), systemImage: "person.fill")
                         .foregroundColor(.primary)
                     Spacer()
                     if voiceGender == "male" {
@@ -80,9 +79,9 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text(NSLocalizedString("countdown_voice", comment: ""))
+            Text(L("countdown_voice"))
         } footer: {
-            Text(NSLocalizedString("voice_used_for_time_announcements", comment: ""))
+            Text(L("voice_used_for_time_announcements"))
         }
     }
 
@@ -93,7 +92,7 @@ struct SettingsView: View {
                     announcementInterval = interval
                 } label: {
                     HStack {
-                        Text("\(NSLocalizedString("every", comment: "")) \(interval) \(NSLocalizedString("seconds", comment: ""))")
+                        Text("\(L("every")) \(interval) \(L("seconds"))")
                             .foregroundColor(.primary)
                         Spacer()
                         if announcementInterval == interval {
@@ -104,27 +103,27 @@ struct SettingsView: View {
                 }
             }
         } header: {
-            Text(NSLocalizedString("announcement_interval", comment: ""))
+            Text(L("announcement_interval"))
         } footer: {
-            Text(NSLocalizedString("how_often_voice_announces", comment: ""))
+            Text(L("how_often_voice_announces"))
         }
     }
 
     private var aboutSection: some View {
         Section {
             VStack(alignment: .leading, spacing: 8) {
-                Text(NSLocalizedString("apnea_trainer", comment: ""))
+                Text(L("apnea_trainer"))
                     .font(.headline)
-                Text(NSLocalizedString("freediving_breath_hold_training", comment: ""))
+                Text(L("freediving_breath_hold_training"))
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Text("\(NSLocalizedString("version", comment: "")) 1.0")
+                Text("\(L("version")) 1.0")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
             .padding(.vertical, 8)
         } header: {
-            Text(NSLocalizedString("about", comment: ""))
+            Text(L("about"))
         }
     }
 }

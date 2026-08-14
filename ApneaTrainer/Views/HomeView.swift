@@ -5,24 +5,24 @@ struct HomeView: View {
     @StateObject private var timerManager = TimerManager()
     @State private var showTimer = false
     @State private var selectedTable: TrainingTable?
+    @AppStorage("appLanguage") private var appLanguage = "en"
 
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
                     headerSection
-
                     quickStartSection
-
                     recentTablesSection
                 }
                 .padding()
             }
-            .navigationTitle(NSLocalizedString("apnea_trainer", comment: ""))
+            .navigationTitle(L("apnea_trainer"))
             .sheet(isPresented: $showTimer) {
                 TimerView(timerManager: timerManager, table: selectedTable)
             }
         }
+        .id(appLanguage)
     }
 
     private var headerSection: some View {
@@ -30,8 +30,7 @@ struct HomeView: View {
             Image(systemName: "wind")
                 .font(.system(size: 60))
                 .foregroundColor(.cyan)
-
-            Text(NSLocalizedString("breathe_hold_conquer", comment: ""))
+            Text(L("breathe_hold_conquer"))
                 .font(.title3)
                 .foregroundColor(.secondary)
         }
@@ -45,24 +44,21 @@ struct HomeView: View {
 
     private var quickStartSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(NSLocalizedString("quick_start", comment: ""))
+            Text(L("quick_start"))
                 .font(.title2.bold())
-
             NavigationLink(destination: TablesView()) {
-                quickStartCard(title: NSLocalizedString("training_tables", comment: ""), subtitle: "O2, CO2, Mix & First Contraction", icon: "list.bullet.rectangle", color: .blue)
+                quickStartCard(title: L("training_tables"), subtitle: "O2, CO2, Mix & First Contraction", icon: "list.bullet.rectangle", color: .blue)
             }
-
             NavigationLink(destination: CustomTableView()) {
-                quickStartCard(title: NSLocalizedString("custom", comment: ""), subtitle: NSLocalizedString("build_your_table", comment: ""), icon: "slider.horizontal.3", color: .green)
+                quickStartCard(title: L("custom"), subtitle: L("build_your_table"), icon: "slider.horizontal.3", color: .green)
             }
         }
     }
 
     private var recentTablesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(NSLocalizedString("preset_tables", comment: ""))
+            Text(L("preset_tables"))
                 .font(.title2.bold())
-
             ForEach(store.tables.prefix(4)) { table in
                 Button {
                     selectedTable = table
@@ -83,7 +79,6 @@ struct HomeView: View {
                 .frame(width: 50, height: 50)
                 .background(color.opacity(0.15))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
-
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .font(.headline)
@@ -92,9 +87,7 @@ struct HomeView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-
             Spacer()
-
             Image(systemName: "chevron.right")
                 .foregroundColor(.secondary)
         }
@@ -112,13 +105,11 @@ struct HomeView: View {
                 Text(table.name)
                     .font(.headline)
                     .foregroundColor(.primary)
-                Text("\(table.rows.count) \(NSLocalizedString("levels", comment: ""))")
+                Text("\(table.rows.count) \(L("levels"))")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-
             Spacer()
-
             Image(systemName: "play.circle.fill")
                 .font(.title2)
                 .foregroundColor(.cyan)

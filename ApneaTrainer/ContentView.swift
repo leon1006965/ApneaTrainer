@@ -7,22 +7,22 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label(NSLocalizedString("home", comment: ""), systemImage: "house.fill")
+                    Label(L("home"), systemImage: "house.fill")
                 }
             TablesView()
                 .tabItem {
-                    Label(NSLocalizedString("tables", comment: ""), systemImage: "list.bullet.rectangle")
+                    Label(L("tables"), systemImage: "list.bullet.rectangle")
                 }
             CustomTableView()
                 .tabItem {
-                    Label(NSLocalizedString("custom", comment: ""), systemImage: "slider.horizontal.3")
+                    Label(L("custom"), systemImage: "slider.horizontal.3")
                 }
             SettingsView()
                 .tabItem {
-                    Label(NSLocalizedString("settings", comment: ""), systemImage: "gearshape.fill")
+                    Label(L("settings"), systemImage: "gearshape.fill")
                 }
         }
         .accentColor(.cyan)
-        .environment(\.locale, Locale(identifier: appLanguage))
+        .id(appLanguage)
     }
 }

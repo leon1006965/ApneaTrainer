@@ -11,75 +11,64 @@ struct CustomTableView: View {
     @State private var levels = 10
     @State private var showTimer = false
     @State private var showSaveAlert = false
+    @AppStorage("appLanguage") private var appLanguage = "en"
 
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 24) {
                     customBuilderSection
-
                     savedTablesSection
                 }
                 .padding()
             }
-            .navigationTitle(NSLocalizedString("custom", comment: ""))
+            .navigationTitle(L("custom"))
             .sheet(isPresented: $showTimer) {
                 TimerView(timerManager: timerManager, table: nil)
             }
-            .alert(NSLocalizedString("save", comment: ""), isPresented: $showSaveAlert) {
-                TextField(NSLocalizedString("table_name", comment: ""), text: $tableName)
-                Button(NSLocalizedString("save", comment: "")) {
-                    saveTable()
-                }
-                Button(NSLocalizedString("cancel", comment: ""), role: .cancel) {}
+            .alert(L("save"), isPresented: $showSaveAlert) {
+                TextField(L("table_name"), text: $tableName)
+                Button(L("save")) { saveTable() }
+                Button(L("cancel"), role: .cancel) {}
             } message: {
-                Text(NSLocalizedString("enter_table_name", comment: ""))
+                Text(L("enter_table_name"))
             }
         }
+        .id(appLanguage)
     }
 
     private var customBuilderSection: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text(NSLocalizedString("build_your_table", comment: ""))
+            Text(L("build_your_table"))
                 .font(.title2.bold())
-
             VStack(spacing: 12) {
-                timePicker(label: NSLocalizedString("hold_time", comment: ""), minutes: $holdMinutes, seconds: $holdSeconds)
-                timePicker(label: NSLocalizedString("rest_time", comment: ""), minutes: $restMinutes, seconds: $restSeconds)
-
-                Stepper("\(NSLocalizedString("levels", comment: "")): \(levels)", value: $levels, in: 1...100)
+                timePicker(label: L("hold_time"), minutes: $holdMinutes, seconds: $holdSeconds)
+                timePicker(label: L("rest_time"), minutes: $restMinutes, seconds: $restSeconds)
+                Stepper("\(L("levels")): \(levels)", value: $levels, in: 1...100)
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 12)
                             .fill(Color(.systemGray6))
                     )
             }
-
             HStack(spacing: 12) {
                 Button {
                     showSaveAlert = true
                 } label: {
-                    Label(NSLocalizedString("save", comment: ""), systemImage: "square.and.arrow.down")
+                    Label(L("save"), systemImage: "square.and.arrow.down")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color.green)
-                        )
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.green))
                         .foregroundColor(.white)
                         .font(.headline)
                 }
-
                 Button {
                     startTraining()
                 } label: {
-                    Label(NSLocalizedString("start", comment: ""), systemImage: "play.fill")
+                    Label(L("start"), systemImage: "play.fill")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color.cyan)
-                        )
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.cyan))
                         .foregroundColor(.white)
                         .font(.headline)
                 }
@@ -95,11 +84,10 @@ struct CustomTableView: View {
 
     private var savedTablesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(NSLocalizedString("saved_tables", comment: ""))
+            Text(L("saved_tables"))
                 .font(.title2.bold())
-
             if store.customTables.isEmpty {
-                Text(NSLocalizedString("no_saved_tables", comment: ""))
+                Text(L("no_saved_tables"))
                     .foregroundColor(.secondary)
                     .padding()
             } else {
@@ -144,10 +132,7 @@ struct CustomTableView: View {
             }
         }
         .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color(.systemGray6))
-        )
+        .background(RoundedRectangle(cornerRadius: 12).fill(Color(.systemGray6)))
     }
 
     private func savedTableRow(_ table: TrainingTable) -> some View {
@@ -159,7 +144,7 @@ struct CustomTableView: View {
                     Text(table.name)
                         .font(.headline)
                         .foregroundColor(.primary)
-                    Text("\(table.rows.count) \(NSLocalizedString("levels", comment: "")) - \(NSLocalizedString("hold", comment: "")): \(formatTime(table.rows.first?.holdSeconds ?? 0))")
+                    Text("\(table.rows.count) \(L("levels")) - \(L("hold")): \(formatTime(table.rows.first?.holdSeconds ?? 0))")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -169,10 +154,7 @@ struct CustomTableView: View {
                     .foregroundColor(.purple)
             }
             .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.purple.opacity(0.1))
-            )
+            .background(RoundedRectangle(cornerRadius: 12).fill(Color.purple.opacity(0.1)))
         }
     }
 
@@ -193,7 +175,7 @@ struct CustomTableView: View {
         let holdTotal = holdMinutes * 60 + holdSeconds
         let restTotal = restMinutes * 60 + restSeconds
         let rows = (1...levels).map { TableRow(level: $0, holdSeconds: holdTotal, restSeconds: restTotal) }
-        let table = TrainingTable(type: .custom, name: tableName.isEmpty ? NSLocalizedString("custom", comment: "") : tableName, rows: rows)
+        let table = TrainingTable(type: .custom, name: tableName.isEmpty ? L("custom") : tableName, rows: rows)
         store.addCustomTable(table)
     }
 
