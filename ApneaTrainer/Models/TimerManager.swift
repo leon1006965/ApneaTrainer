@@ -76,6 +76,7 @@ class TimerManager: ObservableObject {
         timeRemaining = readyDuration
         isPaused = false
         lastAnnouncementTime = readyDuration
+        speakCountdown(timeRemaining)
         startTimer()
     }
 
@@ -116,15 +117,15 @@ class TimerManager: ObservableObject {
     }
 
     private func tick() {
-        if timeRemaining <= 5 && timeRemaining > 0 {
-            speakCountdown(timeRemaining)
-        }
-
         timeRemaining -= 1
 
         if timeRemaining <= 0 {
             switchPhase()
             return
+        }
+
+        if timeRemaining <= 5 && timeRemaining > 0 {
+            speakCountdown(timeRemaining)
         }
 
         if phase != .ready && shouldAnnounce(timeRemaining) {
