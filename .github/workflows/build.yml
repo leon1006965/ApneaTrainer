@@ -1,0 +1,42 @@
+name: Build IPA
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+
+      - name: Build
+        run: |
+          xcodebuild -project ApneaTrainer.xcodeproj \
+            -scheme ApneaTrainer \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            build
+
+      - name: Create IPA
+        run: |
+          APP="build/Build/Products/Release-iphoneos/ApneaTrainer.app"
+          rm -rf Payload && mkdir Payload
+          cp -R "$APP" Payload/
+          zip -qr ApneaTrainer.ipa Payload
+          rm -rf Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ApneaTrainer
+          path: ApneaTrainer.ipa
+          retention-days: 30

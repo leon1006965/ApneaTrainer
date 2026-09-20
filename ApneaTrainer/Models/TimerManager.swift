@@ -76,7 +76,6 @@ class TimerManager: ObservableObject {
         timeRemaining = readyDuration
         isPaused = false
         lastAnnouncementTime = readyDuration
-        speakLocalized("get_ready")
         startTimer()
     }
 
@@ -117,6 +116,10 @@ class TimerManager: ObservableObject {
     }
 
     private func tick() {
+        if timeRemaining <= 5 && timeRemaining > 0 {
+            speakCountdown(timeRemaining)
+        }
+
         timeRemaining -= 1
 
         if timeRemaining <= 0 {
@@ -124,11 +127,7 @@ class TimerManager: ObservableObject {
             return
         }
 
-        if timeRemaining <= 5 {
-            speakCountdown(timeRemaining)
-        } else if phase == .ready {
-            // no interval announcements during ready
-        } else if shouldAnnounce(timeRemaining) {
+        if phase != .ready && shouldAnnounce(timeRemaining) {
             speakTime(timeRemaining, isResting: phase == .resting)
             lastAnnouncementTime = timeRemaining
         }
@@ -213,7 +212,14 @@ class TimerManager: ObservableObject {
         ]
         let words = numberWords[selectedLanguage] ?? numberWords["en"]!
         let word = words["\(seconds)"] ?? "\(seconds)"
-        speak(word, rate: 0.55, pitch: 1.0, delay: 0.05)
+        synthesizer.stopSpeaking(at: .immediate)
+        let utterance = AVSpeechUtterance(string: word)
+        utterance.voice = voiceForLocale(selectedLanguage)
+        utterance.rate = 0.7
+        utterance.pitchMultiplier = 1.0
+        utterance.preUtteranceDelay = 0
+        utterance.postUtteranceDelay = 0.05
+        synthesizer.speak(utterance)
     }
 
     private func speakTime(_ seconds: Int, isResting: Bool) {
