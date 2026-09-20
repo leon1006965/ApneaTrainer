@@ -270,12 +270,22 @@ class TimerManager: ObservableObject {
             "ru": ["ru-RU"],
         ]
         let locales = localeMap[locale] ?? ["en-US"]
+        let desiredGender: AVSpeechSynthesisVoiceGender = voiceGender == .male ? .male : .female
         for loc in locales {
             if let voice = AVSpeechSynthesisVoice.speechVoices().first(where: {
-                $0.language == loc && $0.quality == .enhanced
+                $0.language == loc && $0.quality == .enhanced && $0.gender == desiredGender
             }) {
                 return voice
             }
+        }
+        for loc in locales {
+            if let voice = AVSpeechSynthesisVoice.speechVoices().first(where: {
+                $0.language == loc && $0.gender == desiredGender
+            }) {
+                return voice
+            }
+        }
+        for loc in locales {
             if let voice = AVSpeechSynthesisVoice(language: loc) {
                 return voice
             }
