@@ -76,8 +76,11 @@ class TimerManager: ObservableObject {
         timeRemaining = readyDuration
         isPaused = false
         lastAnnouncementTime = readyDuration
-        speakCountdown(timeRemaining)
         startTimer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+            guard let self = self, self.phase == .ready else { return }
+            self.speakCountdown(self.timeRemaining)
+        }
     }
 
     private func startHold() {
